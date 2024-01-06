@@ -1,11 +1,14 @@
 import React from 'react'
-import { Header, Services } from '../components/HomeScreenComponents'
+import { Features, Header, Score, Services, Team } from '../components/HomeScreenComponents'
 
 const HomeScreen = () => {
   return (
     <div className='min-h-screen'>
     <Header />
+    <Score />
     <Services />
+    <Features />
+    <Team />
     </div>
   )
 }

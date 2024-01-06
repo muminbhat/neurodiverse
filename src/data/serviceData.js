@@ -1,11 +1,3 @@
-import diagnosis from "../assets/diagnosis.jpg"
-import occupationaltherapy from "../assets/occupationaltherapy.jpg"
-import phsyio from "../assets/phsysio.jpg"
-import speechtherapy from "../assets/speechtherapy.jpg"
-import ADLTherapy from "../assets/ADLTraining.jpg"
-import artTherapy from "../assets/artTherapy.jpg"
-import specialed from "../assets/specialed.jpg"
-
 const serviceData = [
     {
       id: 1,

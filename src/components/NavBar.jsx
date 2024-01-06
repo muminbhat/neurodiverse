@@ -17,7 +17,7 @@ const Navbar = () => {
 
   const handleScroll = () => {
     const currentScrollPos = window.scrollY;
-    setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10);
+    setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 80);
     setPrevScrollPos(currentScrollPos);
   };
 
@@ -47,7 +47,7 @@ const Navbar = () => {
                 <Link to="/login">
                   <button
                     type="button"
-                    className="text-white bg-purple-600 hover:bg-purple-700 animate transition-all duration-500 dark:bg-purple-600 dark:hover:bg-purple-500 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0  dark:focus:cyan-600"
+                    className="text-white bg-teal-700 hover:bg-teal-600 animate transition-all duration-500 dark:bg-teal-600 dark:hover:bg-teal-500 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0  dark:focus:cyan-600"
                   >
                     Appointment
                   </button>
