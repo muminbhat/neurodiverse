@@ -293,51 +293,37 @@ const Team = () => {
           {/* End Col */}
           <div className="text-center">
             <img
-              className="rounded-xl sm:w-48 sm:h-48 lg:w-60 lg:h-60 mx-auto"
-              src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=900&h=900&q=80"
+              className="rounded-xl sm:w-48 sm:h-48 lg:w-60 lg:h-60 mx-auto object-cover"
+              src="https://res.cloudinary.com/dxn2kt39b/image/upload/v1704536050/vzj12drgqe9mzlm4v6un.jpg"
               alt="Image Description"
             />
             <div className="mt-2 sm:mt-4">
               <h3 className="text-sm font-medium text-gray-800 sm:text-base lg:text-lg dark:text-gray-200">
-                Maria Powers
+                Muqadus Fayaz
               </h3>
               <p className="text-xs text-gray-600 sm:text-sm lg:text-base dark:text-gray-400">
-                Director of sales
+                Physiotherapist
               </p>
             </div>
           </div>
           {/* End Col */}
           <div className="text-center">
             <img
-              className="rounded-xl sm:w-48 sm:h-48 lg:w-60 lg:h-60 mx-auto"
-              src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=900&h=900&q=80"
+              className="rounded-xl sm:w-48 sm:h-48 lg:w-60 lg:h-60 mx-auto object-cover"
+              src="https://res.cloudinary.com/dxn2kt39b/image/upload/v1704532823/sirgkpgtjthdnmt5xps2.jpg"
               alt="Image Description"
             />
             <div className="mt-2 sm:mt-4">
               <h3 className="text-sm font-medium text-gray-800 sm:text-base lg:text-lg dark:text-gray-200">
-                Delia Pawelke
+              MANISHA GAURAV
               </h3>
               <p className="text-xs text-gray-600 sm:text-sm lg:text-base dark:text-gray-400">
-                Front-end Developer
+              Senior Speech and Language Pathologist 
               </p>
             </div>
           </div>
          
-          <div className="text-center">
-            <img
-              className="rounded-xl sm:w-48 sm:h-48 lg:w-60 lg:h-60 mx-auto"
-              src="https://images.unsplash.com/photo-1602452920335-6a132309c7c8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=900&h=900&q=80"
-              alt="Image Description"
-            />
-            <div className="mt-2 sm:mt-4">
-              <h3 className="text-sm font-medium text-gray-800 sm:text-base lg:text-lg dark:text-gray-200">
-                Sophia Harrington
-              </h3>
-              <p className="text-xs text-gray-600 sm:text-sm lg:text-base dark:text-gray-400">
-                Project Manager
-              </p>
-            </div>
-          </div>
+         
           {/* End Col */}
         </div>
         {/* End Grid */}
