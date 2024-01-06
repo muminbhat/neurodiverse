@@ -30,7 +30,7 @@ const Header = () => {
   ];
 
   return (
-    <div className="bg-teal-700  dark:bg-gray-900 min-h-[30rem] md:max-h-[60rem] mt-[5rem] max-w-[100rem] md:mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-10 rounded-xl mx-5">
+    <div className="bg-teal-700  dark:bg-gray-900 min-h-[30rem] md:max-h-[60rem] mt-[5rem] max-w-[100rem] md:mx-auto md:px-4 sm:px-6 lg:px-8 pt-24 pb-10 rounded-xl mx-5">
       <motion.h1
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
