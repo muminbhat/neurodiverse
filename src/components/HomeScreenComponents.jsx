@@ -261,19 +261,20 @@ const Team = () => {
           {/* End Col */}
           <div className="text-center">
             <img
-              className="rounded-xl sm:w-48 object-cover sm:h-48 lg:w-60 lg:h-60 mx-auto"
-              src="https://res.cloudinary.com/dxn2kt39b/image/upload/v1704532822/rdi89ojpufuepngts046.jpg"
+              className="rounded-xl sm:w-48 sm:h-48 lg:w-60 lg:h-60 mx-auto object-cover"
+              src="https://res.cloudinary.com/dxn2kt39b/image/upload/v1704536050/vzj12drgqe9mzlm4v6un.jpg"
               alt="Image Description"
             />
             <div className="mt-2 sm:mt-4">
               <h3 className="text-sm font-medium text-gray-800 sm:text-base lg:text-lg dark:text-gray-200">
-                Uzma Saimi
+                Muqadus Fayaz
               </h3>
               <p className="text-xs text-gray-600 sm:text-sm lg:text-base dark:text-gray-400">
-                Speech Therapis
+                Physiotherapist
               </p>
             </div>
           </div>
+          
           {/* End Col */}
           <div className="text-center">
             <img
@@ -293,16 +294,16 @@ const Team = () => {
           {/* End Col */}
           <div className="text-center">
             <img
-              className="rounded-xl sm:w-48 sm:h-48 lg:w-60 lg:h-60 mx-auto object-cover"
-              src="https://res.cloudinary.com/dxn2kt39b/image/upload/v1704536050/vzj12drgqe9mzlm4v6un.jpg"
+              className="rounded-xl sm:w-48 object-cover sm:h-48 lg:w-60 lg:h-60 mx-auto"
+              src="https://res.cloudinary.com/dxn2kt39b/image/upload/v1704532822/rdi89ojpufuepngts046.jpg"
               alt="Image Description"
             />
             <div className="mt-2 sm:mt-4">
               <h3 className="text-sm font-medium text-gray-800 sm:text-base lg:text-lg dark:text-gray-200">
-                Muqadus Fayaz
+                Uzma Saimi
               </h3>
               <p className="text-xs text-gray-600 sm:text-sm lg:text-base dark:text-gray-400">
-                Physiotherapist
+                Speech Therapis
               </p>
             </div>
           </div>
