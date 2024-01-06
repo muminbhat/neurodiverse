@@ -94,7 +94,7 @@ const Header = () => {
 
       <div className="flex flex-row lg:justify-between justify-center mt-5 lg:-mt-96">
         <p className="text-gray-300 text-center max-w-sm lg:text-start text-xl">
-          Tiny Patients, Big Hearts: Your Trusted Partner in Pediatric Wellness
+          Tiny Patients, Big Hearts: Your Trusted Partner in Developmental and Behavioral Pediatrics
         </p>
         <button
           type="button"
