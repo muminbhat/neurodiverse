@@ -1,119 +1,62 @@
 import React from "react";
 import { motion, AnimatePresence, useAnimation } from "framer-motion";
+import { Link } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay, EffectCards, Parallax } from "swiper/modules";
 import hero from "../assets/hero.png";
 import serviceData from "../data/serviceData";
+import heroSliderData from "../data/heroSliderData";
+import "swiper/swiper-bundle.css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
 const Header = () => {
-  const leftFeatures = [
-    {
-      id: 1,
-      text: "Assessments and Diagnosis",
-      color: "from-purple-600 to-blue-500",
-    },
-    { id: 2, text: "Physiotherapy", color: "from-yellow-400 to-red-500" },
-    {
-      id: 3,
-      text: "Occupational Therapy",
-      color: "from-green-400 to-gray-500",
-    },
-    { id: 4, text: "Speech Therapy", color: "from-blue-400 to-pink-500" },
-  ];
-
-  const rightFeatures = [
-    { id: 1, text: "Special Education", color: "from-teal-400 to-blue-500" },
-    { id: 2, text: "ADL Training", color: "from-yellow-400 to-red-500" },
-    {
-      id: 3,
-      text: "Art Therapy",
-      color: "from-green-400 to-gray-500",
-    },
-  ];
 
   return (
-    <div className="bg-teal-700  dark:bg-gray-900 min-h-[30rem] md:max-h-[60rem] mt-[5rem] max-w-[100rem] md:mx-auto  lg:px-8 pt-24 pb-10 rounded-3xl">
-      <motion.h1
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 2.5 }}
-        className="text-center text-3xl md:text-6xl lg:text-9xl md:tracking-widest font-bold blur-load"
-      >
-        <span className="bg-gradient-to-br from-teal-100 animate-pulse to-teal-600 text-transparent bg-clip-text  text-gray-200">
-          NEURODIVERSE
-        </span>
-      </motion.h1>
-      <div className="flex items-center justify-center">
-        <img src={hero} alt="hero" />
-      </div>
-
-      {/* Features Start */}
-      <div className="relative lg:block items-center hidden bottom-80 left-5">
-        {leftFeatures.map((feature) => (
-          <div key={feature.id} className="mb-4">
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="text-teal-100 text-3xl font-bold mb-2 "
-            >
-              {feature.text}
-            </motion.p>
-
-            <motion.div
-              initial={{ width: 0 }}
-              animate={{ width: "30%" }}
-              transition={{ duration: 5 }}
-              className={`bg-gradient-to-r ${feature.color} h-1 `}
-            />
+    <div className="max-w-[85rem] w-full overflow-x-hidden overflow-y-hidden px-4 py-6 sm:px-6 mt-20 lg:py-14 mx-auto rounded">
+    <Swiper
+      effect="cards"
+      modules={[Navigation, Pagination, Autoplay, EffectCards]}
+      spaceBetween={20}
+      slidesPerView={1}
+      autoplay={{ delay: 3000 }}
+      breakpoints={{
+        740: {
+          slidesPerView: 1,
+        },
+        1024: {
+          slidesPerView: 1,
+        },
+      }}
+    >
+      {/* Grid */}
+      <div>
+  {heroSliderData.map((ad, index) => (
+    <div key={index}>
+      <SwiperSlide>
+        <div className="aspect-w-16 aspect-h-10 relative">
+          <img
+            className="w-full object-cover rounded-xl max-h-[35rem]"
+            src={ad.image}
+            alt="advertisements"
+          />
+          <div className="absolute inset-0 bg-black opacity-40 rounded-xl"></div>
+          <div className="absolute bottom-10 left-20 lg:bottom-20 lg:left-36">
+          <h2 className="text-white font-bold text-2xl lg:text-7xl w-40">
+            {ad.name}
+          </h2>
           </div>
-        ))}
-      </div>
-
-      <div className="relative bottom-[35rem] right-20 hidden lg:block">
-        {/* Your content for the right side */}
-        {rightFeatures.map((feature) => (
-          <div key={feature.id} className="mb-4">
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="text-teal-100 text-3xl text-end font-bold mb-2 "
-            >
-              {feature.text}
-            </motion.p>
-
-            <motion.div
-              initial={{ width: 0 }}
-              animate={{ width: "20%", right: 0 }} // Adjust right value as needed
-              transition={{ duration: 5 }}
-              className={`bg-gradient-to-l ${feature.color} h-1 absolute right-0`}
-            />
-          </div>
-        ))}
-      </div>
-      {/* Features End */}
-
-      <div className="flex flex-row lg:justify-between justify-center mt-5 lg:-mt-96">
-        <p className="text-gray-300 text-center max-w-sm lg:text-start text-xl">
-          Tiny Patients, Big Hearts: Your Trusted Partner in Developmental and Behavioral Pediatrics
-        </p>
-        <button
-          type="button"
-          className="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none hidden lg:block focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 animate-bounce"
-        >
-          Book Consultation
-        </button>
-      </div>
-      <div className="flex flex-row justify-center mt-8 lg:hidden">
-        <button
-          type="button"
-          className="text-white bg-gradient-to-br from-green-400 to-blue-600  hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 animate-bounce font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
-        >
-          Book Consultation
-        </button>
-      </div>
+        </div>
+      </SwiperSlide>
     </div>
-  );
-};
+  ))}
+</div>
+
+    </Swiper>
+  </div>
+  )
+}
 
 const Services = () => {
   return (
@@ -148,7 +91,7 @@ const Services = () => {
                   />
                 </div>
                 <div className="p-4 md:p-5">
-                  <h3 className="mt-2 text-lg font-medium text-gray-800 group-hover:text-blue-600 dark:text-gray-300 dark:group-hover:text-white">
+                  <h3 className="mt-2 text-lg font-medium text-gray-800 group-hover:text-orange-600 dark:text-gray-300 dark:group-hover:text-white">
                     {service.name}
                   </h3>
                 </div>
@@ -171,53 +114,53 @@ const Score = () => {
   return (
     <>
       {/* Features */}
-      <div className="max-w-[65rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+      <div className="max-w-[65rem] px-4  sm:px-6 lg:px-8 mx-auto">
         {/* Grid */}
         <div className="mt-20 grid gap-6 grid-cols-2 sm:gap-12 lg:grid-cols-4 lg:gap-8">
           {/* Stats */}
           <div>
-            <h4 className="text-lg sm:text-xl font-semibold text-gray-800 dark:text-gray-200">
+            <h4 className="text-lg text-center sm:text-xl font-semibold text-gray-800 dark:text-gray-200">
               Inclusive Programs
             </h4>
-            <p className="mt-2 sm:mt-3 text-4xl sm:text-6xl font-bold text-teal-600">
+            <p className="mt-2 sm:mt-3 text-center text-4xl sm:text-6xl font-bold text-[#E75F14]">
               20+
             </p>
-            <p className="mt-1 text-gray-500">Inclusive Programs</p>
+            <p className="mt-1  text-center text-gray-500">Inclusive Programs</p>
           </div>
           {/* End Stats */}
           {/* Stats */}
           <div>
-            <h4 className="text-lg sm:text-xl font-semibold text-gray-800 dark:text-gray-200">
+            <h4 className="text-lg text-center sm:text-xl font-semibold text-gray-800 dark:text-gray-200">
               Research Initiatives
             </h4>
-            <p className="mt-2 sm:mt-3 text-4xl sm:text-6xl font-bold text-teal-600">
+            <p className="mt-2 sm:mt-3 text-center text-4xl sm:text-6xl font-bold text-[#E75F14]">
               07+
             </p>
-            <p className="mt-1 text-gray-500">
+            <p className="mt-1 text-center text-gray-500">
               neurodiversity and pediatric care
             </p>
           </div>
           {/* End Stats */}
           {/* Stats */}
           <div>
-            <h4 className="text-lg sm:text-xl font-semibold text-gray-800 dark:text-gray-200">
+            <h4 className="text-lg text-center sm:text-xl font-semibold text-gray-800 dark:text-gray-200">
               Happy Clients
             </h4>
-            <p className="mt-2 sm:mt-3 text-4xl sm:text-6xl font-bold text-teal-600">
+            <p className="mt-2 text-center sm:mt-3 text-4xl sm:text-6xl font-bold text-[#E75F14]">
               98.2%
             </p>
-            <p className="mt-1 text-gray-500">this year alone</p>
+            <p className="mt-1 text-center text-gray-500">this year alone</p>
           </div>
           {/* End Stats */}
           {/* Stats */}
           <div>
-            <h4 className="text-lg sm:text-xl font-semibold text-gray-800 dark:text-gray-200">
+            <h4 className="text-lg text-center sm:text-xl font-semibold text-gray-800 dark:text-gray-200">
               Training Programs
             </h4>
-            <p className="mt-2 sm:mt-3 text-4xl sm:text-6xl font-bold text-teal-600">
+            <p className="mt-2 text-center sm:mt-3 text-4xl sm:text-6xl font-bold text-[#E75F14]">
               11+
             </p>
-            <p className="mt-1 text-gray-500">this year alone</p>
+            <p className="mt-1 text-center text-gray-500">this year alone</p>
           </div>
         </div>
         {/* End Grid */}
@@ -303,7 +246,7 @@ const Team = () => {
                 Uzma Saimi
               </h3>
               <p className="text-xs text-gray-600 sm:text-sm lg:text-base dark:text-gray-400">
-                Speech Therapis
+                Speech Therapist
               </p>
             </div>
           </div>
@@ -323,10 +266,40 @@ const Team = () => {
               </p>
             </div>
           </div>
-         
-         
           {/* End Col */}
+          <div className="text-center">
+            <img
+              className="rounded-xl sm:w-48 sm:h-48 lg:w-60 lg:h-60 mx-auto object-cover"
+              src="https://res.cloudinary.com/dxn2kt39b/image/upload/v1705598030/cdgoeptfbmsicwrqc75b.jpg"
+              alt="Image Description"
+            />
+            <div className="mt-2 sm:mt-4">
+              <h3 className="text-sm font-medium text-gray-800 sm:text-base lg:text-lg dark:text-gray-200">
+              ISHRAT ASHRAF
+              </h3>
+              <p className="text-xs text-gray-600 sm:text-sm lg:text-base dark:text-gray-400">
+              CLINICAL DIETICIAN
+              </p>
+            </div>
+          </div>
+        <div className="text-center">
+            <img
+              className="rounded-xl sm:w-48 sm:h-48 lg:w-60 lg:h-60 mx-auto object-cover"
+              src="https://res.cloudinary.com/dxn2kt39b/image/upload/v1705598031/tlsukfvk9qoknfcxrvqn.jpg"
+              alt="Image Description"
+            />
+            <div className="mt-2 sm:mt-4">
+              <h3 className="text-sm font-medium text-gray-800 sm:text-base lg:text-lg dark:text-gray-200">
+              Nusrat Shabir Aga 
+
+              </h3>
+              <p className="text-xs text-gray-600 sm:text-sm lg:text-base dark:text-gray-400">
+              Special Educator
+              </p>
+            </div>
+          </div>
         </div>
+
         {/* End Grid */}
       </div>
       {/* End Team */}
@@ -395,7 +368,7 @@ const Features = () => {
               <ul role="list" className="space-y-2 sm:space-y-4">
                 <li className="flex space-x-3">
                   {/* Solid Check */}
-                  <span className="mt-0.5 h-5 w-5 flex justify-center items-center rounded-full bg-blue-50 text-blue-600 dark:bg-blue-800/30 dark:text-blue-500">
+                  <span className="mt-0.5 h-5 w-5 flex justify-center items-center rounded-full bg-orange-50 text-orange-600 dark:bg-orange-800/30 dark:text-orange-500">
                     <svg
                       className="flex-shrink-0 h-3.5 w-3.5"
                       xmlns="http://www.w3.org/2000/svg"
@@ -418,7 +391,7 @@ const Features = () => {
                 </li>
                 <li className="flex space-x-3">
                   {/* Solid Check */}
-                  <span className="mt-0.5 h-5 w-5 flex justify-center items-center rounded-full bg-blue-50 text-blue-600 dark:bg-blue-800/30 dark:text-blue-500">
+                  <span className="mt-0.5 h-5 w-5 flex justify-center items-center rounded-full bg-orange-50 text-orange-600 dark:bg-orange-800/30 dark:text-orange-500">
                     <svg
                       className="flex-shrink-0 h-3.5 w-3.5"
                       xmlns="http://www.w3.org/2000/svg"
@@ -441,7 +414,7 @@ const Features = () => {
                 </li>
                 <li className="flex space-x-3">
                   {/* Solid Check */}
-                  <span className="mt-0.5 h-5 w-5 flex justify-center items-center rounded-full bg-blue-50 text-blue-600 dark:bg-blue-800/30 dark:text-blue-500">
+                  <span className="mt-0.5 h-5 w-5 flex justify-center items-center rounded-full bg-orange-50 text-orange-600 dark:bg-orange-800/30 dark:text-orange-500">
                     <svg
                       className="flex-shrink-0 h-3.5 w-3.5"
                       xmlns="http://www.w3.org/2000/svg"
@@ -475,4 +448,71 @@ const Features = () => {
   );
 };
 
-export { Header, Services, Team, Features, Score };
+const Appoint = () => {
+  return (
+    <>
+  {/* Hero */}
+  <div className="relative overflow-hidden pb-20 before:absolute before:top-0 before:start-1/2 before:bg-[url('https://preline.co/assets/svg/examples/squared-bg-element.svg')] before:bg-no-repeat before:bg-top before:w-full before:h-full before:-z-[1] before:transform before:-translate-x-1/2 dark:before:bg-[url('https://preline.co/assets/svg/examples/squared-bg-element-dark.svg')]">
+    <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-10">
+      {/* Announcement Banner */}
+      <div className="flex justify-center">
+        <a
+          className="inline-flex items-center gap-x-2 bg-white border border-gray-200 text-xs text-gray-600 p-2 px-3 rounded-full transition hover:border-gray-300 dark:bg-gray-800 dark:border-gray-700 dark:hover:border-gray-600 dark:text-gray-400"
+          href="https://wa.me/9622727372"
+          target="blank"
+        >
+          Book Your Appointment Now
+          <span className="flex items-center gap-x-1">
+            <span className="border-s border-gray-200 text-orange-600 ps-2 dark:text-orange-500">
+              Appoint
+            </span>
+            <svg
+              className="flex-shrink-0 w-4 h-4 text-orange-600"
+              xmlns="http://www.w3.org/2000/svg"
+              width={24}
+              height={24}
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="m9 18 6-6-6-6" />
+            </svg>
+          </span>
+        </a>
+      </div>
+      {/* End Announcement Banner */}
+      {/* Title */}
+      <div className="mt-5 max-w-2xl text-center mx-auto">
+        <h1 className="block font-bold text-gray-800 text-4xl md:text-5xl lg:text-6xl dark:text-gray-200">
+        Unlocking Potential Nurturing Future
+        </h1>
+      </div>
+      {/* End Title */}
+      <div className="mt-5 max-w-3xl text-center mx-auto">
+        <p className="text-lg text-gray-600 dark:text-gray-400">
+        Your Trusted Partner in Developmental and Behavioral Pediatrics
+        </p>
+      </div>
+      {/* Buttons */}
+      <div className="mt-8 gap-3 flex justify-center">
+        <a
+          className="inline-flex justify-center items-center gap-x-3 text-center bg-gradient-to-tl from-orange-600 to-violet-600 hover:from-violet-600 hover:to-orange-600 border border-transparent text-white text-sm font-medium rounded-full focus:outline-none focus:ring-2 focus:ring-orange-600 focus:ring-offset-2 focus:ring-offset-white py-3 px-4 dark:focus:ring-offset-gray-800"
+          href="https://wa.me/9622727372"
+          target="blank"
+        >
+        
+          Book Appointment 
+        </a>
+      </div>
+      {/* End Buttons */}
+    </div>
+  </div>
+  {/* End Hero */}
+</>
+  )
+}
+
+export { Header, Services, Team, Features, Score, Appoint };

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Element } from "react-scroll"; // NavScroll Effect Hide and Show
 import { motion, AnimatePresence } from "framer-motion";
-import Minnavlogo from "../assets/Minnavlogo.png"
+import Minnavlogo from "../assets/Minnavlogo.png";
 import NavLinks from "./NavLinks";
 import DarkModeSwitcher from "./DarkModeSwitcher";
 
@@ -17,7 +17,7 @@ const Navbar = () => {
 
   const handleScroll = () => {
     const currentScrollPos = window.scrollY;
-    setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 80);
+    setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 200);
     setPrevScrollPos(currentScrollPos);
   };
 
@@ -32,36 +32,30 @@ const Navbar = () => {
     <div>
       <Element name="top" />
       <nav
-        className={`bg-gray-300 dark:bg-gray-700 fixed mx-auto md:max-w-[70rem] lg:max-w-[85rem] w-full z-20 top-3 left-1/2 transform -translate-x-1/2 rounded-xl dark:border-none backdrop-filter backdrop-blur-lg bg-opacity-50 dark:bg-opacity-50 transition ${
+        className={`bg-pink-100 dark:bg-gray-800 fixed mx-auto border-b-2 border-[#eddffc] w-full z-20 top-0 rounded-md dark:border-none backdrop-filter backdrop-blur-lg bg-opacity-80 dark:bg-opacity-80 transition ${
           visible ? "transform translate-y-0" : "transform -translate-y-full"
         }`}
       >
-        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-6">
-          <Link to="/" className="flex items-center">
-            <img src={Minnavlogo} className="h-12 mr-3" alt="JKDAILY LOGO" />
-            
+        <div className="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-6">
+          <Link to="/" className="flex items-center ">
+            <img src={Minnavlogo} className="h-[5vh] mr-3" alt="JKDAILY LOGO" />
           </Link>
           <div className="flex md:order-2">
-            <Link to="/">
-              <>
-                <Link to="/login">
-                  <button
-                    type="button"
-                    className="text-white bg-teal-700 hover:bg-teal-600 animate transition-all duration-500 dark:bg-teal-600 dark:hover:bg-teal-500 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0  dark:focus:cyan-600"
-                  >
-                    Appointment
-                  </button>
-                </Link>
-              </>
+            <>
+              <a href="https://wa.me/9622727372" target="blank">
+                <button
+                  type="button"
+                  className="text-white bg-[#E75F14] hover:bg-[#fca475] animate transition-all duration-500 dark:bg-[#E75F14] dark:hover:bg-[#e29b74] focus:ring-4 focus:outline-none focus:ring-[#E75F14] font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0  dark:focus:cyan-600"
+                >
+                  Appointment
+                </button>
+              </a>
+            </>
 
-              <div className="hidden">
-                <DarkModeSwitcher />
-              </div>
-            </Link>
             <button
               data-collapse-toggle="navbar-sticky"
               type="button"
-              className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+              className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
               aria-controls="navbar-sticky"
               aria-expanded="false"
               onClick={toggleMenu}
@@ -95,14 +89,14 @@ const Navbar = () => {
             </button>
           </div>
           <AnimatePresence>
-            {window.innerWidth <= 768 ? (
+            {window.innerWidth <= 1050 ? (
               isOpen && (
                 <motion.div
                   initial={{ height: 0, opacity: 1 }}
                   animate={{ height: "auto", opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
                   className={`items-center justify-between ${
-                    !isOpen && "hidden"
+                    !isOpen 
                   } w-full md:flex md:w-auto md:order-1`}
                   id="navbar-sticky"
                 >

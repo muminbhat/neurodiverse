@@ -91,7 +91,7 @@ const Footer = () => {
 
               <span className="self-center text-lg font-bold whitespace-nowrap text-[#eeeeee]  dark:text-[#eeeeee] hidden md:inline logo">
                 Neuro
-                <span className="text-teal-500  dark:text-[#EBDAC6] logo text-lg font-bold">
+                <span className="text-[#E76016]  dark:text-[#faa373] logo text-lg font-bold">
                   Diverse
                 </span>
               </span>
@@ -137,7 +137,7 @@ const Footer = () => {
 
               <p>
                 <Link
-                  to={"/internships"}
+                  to={"/internship"}
                   className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                 >
                   Internships
@@ -145,12 +145,13 @@ const Footer = () => {
               </p>
 
               <p>
-                <Link
-                  to={"/contact"}
+                <a
+                  href="https://wa.me/9622727372"
+                  target="blank"
                   className="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                 >
                   Contact
-                </Link>
+                </a>
               </p>
             </div>
           </div>
