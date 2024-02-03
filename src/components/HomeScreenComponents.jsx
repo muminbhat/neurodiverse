@@ -1,20 +1,22 @@
 import React from "react";
-import { motion, AnimatePresence, useAnimation } from "framer-motion";
-import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay, EffectCards, Parallax } from "swiper/modules";
-import hero from "../assets/hero.png";
+import { Navigation, Pagination, Autoplay, EffectCards } from "swiper/modules";
 import serviceData from "../data/serviceData";
 import heroSliderData from "../data/heroSliderData";
 import "swiper/swiper-bundle.css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import { Link } from "react-router-dom";
+import testimonialData from "../data/testimonialData";
 
 const Header = () => {
 
   return (
-    <div className="max-w-[85rem] w-full overflow-x-hidden overflow-y-hidden px-4 py-6 sm:px-6 mt-20 lg:py-14 mx-auto rounded">
+    <div className="max-w-[85rem] w-full overflow-x-hidden overflow-y-hidden px-4 py-6 sm:px-6 mt-10 lg:py-14 mx-auto rounded">
+      <div className="flex text-center items-center justify-center py-10">
+      <h1 className=" font-bold text-orange-700 dark:text-orange-600"><span className="text-xl md:text-7xl">Neurodiverse</span> <br /> <span className="text-sm md:text-3xl text-orange-500 dark:text-orange-300">Best Developmental & Pediatrics Care in Kashmir</span></h1>
+      </div>
     <Swiper
       effect="cards"
       modules={[Navigation, Pagination, Autoplay, EffectCards]}
@@ -79,9 +81,9 @@ const Services = () => {
           {/* Card */}
           {serviceData.map((service, index) => (
             <div key={service.id}>
-              <a
+              <Link
                 className="group flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md transition dark:bg-slate-900 dark:border-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                href="/"
+                to={"services/"+service.slug}
               >
                 <div className="aspect-w-16 aspect-h-9">
                   <img
@@ -95,7 +97,7 @@ const Services = () => {
                     {service.name}
                   </h3>
                 </div>
-              </a>
+              </Link>
               {/* End Card */}
               {/* Card */}
             </div>
@@ -448,6 +450,68 @@ const Features = () => {
   );
 };
 
+const Testimonials = () => {
+  return (
+    <>
+  {/* Card Blog */}
+  <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+  <div className="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
+          <h2 className="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">
+            Testimonials
+          </h2>
+        </div>
+    {/* Grid */}
+    <div className="grid lg:grid-cols-2 gap-6">
+      {/* Card */}
+      {testimonialData.map((testimony, index)=> (
+        <div key={index}> 
+      <Link
+        className="group relative block rounded-xl dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+        to={"testimonial/"+testimony.slug}
+      >
+        <div className="flex-shrink-0 relative rounded-xl overflow-hidden w-full h-[350px] before:absolute before:inset-x-0 before:w-full before:h-full before:bg-gradient-to-t before:from-gray-900/[.7] before:z-[1]">
+          <img
+            className="w-full h-full absolute top-0 start-0 object-cover"
+            src={testimony.image}
+            alt="Image Description"
+          />
+        </div>
+        <div className="absolute top-0 inset-x-0 z-10">
+          <div className="p-4 flex flex-col h-full sm:p-6">
+            {/* Avatar */}
+            <div className="flex items-center">
+            
+              <div className="ms-2.5 sm:ms-4">
+                <h4 className="font-semibold text-white">{testimony.by}</h4>
+              </div>
+            </div>
+            {/* End Avatar */}
+          </div>
+        </div>
+        <div className="absolute bottom-0 inset-x-0 z-10">
+          <div className="flex flex-col h-full p-4 sm:p-6">
+            <h3 className="text-lg sm:text-3xl font-semibold text-white group-hover:text-white/[.8]">
+{testimony.title.slice(0, 80)+"..."}
+            </h3>
+            <p className="mt-2 text-white/[.8]">
+              Click to read more...
+            </p>
+          </div>
+        </div>
+      </Link>
+      {/* End Card */}
+      </div>
+      ))}
+      
+    </div>
+    {/* End Grid */}
+  </div>
+  {/* End Card Blog */}
+</>
+
+  )
+}
+
 const Appoint = () => {
   return (
     <>
@@ -515,4 +579,4 @@ const Appoint = () => {
   )
 }
 
-export { Header, Services, Team, Features, Score, Appoint };
+export { Header, Services, Team, Features, Score, Testimonials, Appoint };

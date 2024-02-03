@@ -20,7 +20,7 @@ const heroSliderData = [
 
       {
         id: 4,
-        name: "Speach Therapy",
+        name: "Speech Therapy",
         image: "https://res.cloudinary.com/dxn2kt39b/image/upload/v1704423469/gywkdckiuy28qdcidgx6.jpg"
       },
 
@@ -40,6 +40,13 @@ const heroSliderData = [
         id: 7,
         name: "Art Therapy",
         image: "https://res.cloudinary.com/dxn2kt39b/image/upload/v1704423469/suiudvpztfl9ekgsugd1.jpg"
+      },
+      {
+        id: 8,
+        name: "Prosthetics And Orthotics",
+        image: "https://res.cloudinary.com/dxn2kt39b/image/upload/v1706943575/64633fe34b677db2d206a9f7_prosthetic-vs-orthotic_egjw97.jpg",
+        slug: "prosthetics-and-orthotics",
+        content: "Prosthetics focuses on creating artificial limbs, aiding mobility after limb loss. Orthotics involves designing braces and devices to support and correct musculoskeletal issues. Both fields prioritize customization, technological advancements, and collaboration for tailored solutions, enhancing the mobility and well-being of individuals."
       },
 ]
 

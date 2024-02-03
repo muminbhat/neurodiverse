@@ -9,6 +9,9 @@ import InternshipScreen from './pages/InternshipScreen';
 import MediaScreen from './pages/MediaScreen';
 import ServicesScreen from './pages/ServicesScreen';
 import TeamScreen from './pages/TeamScreen';
+import ServiceDetail from './pages/ServiceDetail';
+import TestimonialDetail from './pages/TestimonialDetail';
+import ScrollToTop from './components/ScrollToTop';
 
 
 function App() {
@@ -16,6 +19,7 @@ function App() {
     <BrowserRouter>
     <>
     <NavBar />
+    <ScrollToTop />
     <Routes>
     <Route path="/" element={<HomeScreen />} />
     <Route path="/about" element={<AboutScreen />} />
@@ -24,6 +28,8 @@ function App() {
     <Route path="/media" element={<MediaScreen />} />
     <Route path="/services" element={<ServicesScreen />} />
     <Route path="/team" element={<TeamScreen />} />
+    <Route path="/services/:slug" element={<ServiceDetail />} />
+    <Route path="/testimonial/:slug" element={<TestimonialDetail />} />
     <Route path="/" element={<HomeScreen />} />
     </Routes>
     <Footer />

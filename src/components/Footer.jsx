@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import { Link } from "react-router-dom";
 // import { currentApi } from '../keys/backend';
 
@@ -261,7 +260,7 @@ const Footer = () => {
         <div className="mt-5 sm:mt-12 grid gap-y-2 sm:gap-y-0 sm:flex sm:justify-between sm:items-center">
           <div className="flex justify-between items-center">
             <p className="text-sm text-gray-400">
-              © 2023 NEURODIVERSE. All rights reserved.
+              © 2024 NEURODIVERSE. All rights reserved. <br /><span className="mt-3 text-xs text-gray-400">Designed and Developed by</span> <a target="blank" href="https://muminbhat.com"><span className="text-md text-gray-100 underline italic">Mumin Bhat</span></a>
             </p>
           </div>
           {/* End Col */}

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Appoint, Features, Header, Score, Services, Team } from '../components/HomeScreenComponents'
+import { Appoint, Features, Header, Score, Services, Team, Testimonials } from '../components/HomeScreenComponents'
 
 const HomeScreen = () => {
   return (
@@ -9,6 +9,7 @@ const HomeScreen = () => {
     <Services />
     <Features />
     <Team />
+    <Testimonials />
     <Appoint />
     </div>
   )

@@ -1,5 +1,6 @@
 import React from 'react'
 import serviceData from '../data/serviceData'
+import { Link } from 'react-router-dom'
 
 const ServicesScreen = () => {
   return (
@@ -73,9 +74,9 @@ const ServicesScreen = () => {
           {/* Card */}
           {serviceData.map((service, index) => (
             <div key={service.id}>
-              <a
+              <Link
                 className="group flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md transition dark:bg-slate-900 dark:border-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                href="/"
+                to={service.slug}
               >
                 <div className="aspect-w-16 aspect-h-9">
                   <img
@@ -89,7 +90,7 @@ const ServicesScreen = () => {
                     {service.name}
                   </h3>
                 </div>
-              </a>
+              </Link>
               {/* End Card */}
               {/* Card */}
             </div>
