@@ -14,7 +14,7 @@ const testimonialData = [
         name: "Hammad jeelani",
         title: "With a delayed speech and language diagnosis, Ahmad's journey to becoming verbal has been nothing short of remarkable under the guidance of the dedicated professionals at the center.",
         content: "We cannot express our gratitude enough for the transformative experience our son, Ahmad, has had at the Neurodiverse Centre. With a delayed speech and language diagnosis, Ahmad's journey to becoming verbal has been nothing short of remarkable under the guidance of the dedicated professionals at the center. The tailored approach to his specific needs, combined with the warmth and encouragement from the therapy team, has been a game-changer. Ahmad's newfound ability to communicate is not just a milestone; it's a testament to the expertise and compassion that defines the Neurodiverse Centre. We are witnessing our child's blossoming confidence, and we are filled with hope for his continued progress. Thank you for making a significant impact on Ahmad's life and empowering him to find his voice",
-        by: "FATHER OF AHMAD ALTAF KHAN",
+        by: "FATHER OF Hammad Jeelani",
         image: "https://res.cloudinary.com/dxn2kt39b/image/upload/v1706945232/WhatsApp_Image_2024-01-06_at_20.58.16_pwfgzt.jpg",
         slug: "hammad-jeelani",
       }

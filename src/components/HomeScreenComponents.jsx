@@ -1,6 +1,11 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay, EffectCoverflow } from "swiper/modules";
+import {
+  Navigation,
+  Pagination,
+  Autoplay,
+  EffectCoverflow,
+} from "swiper/modules";
 import serviceData from "../data/serviceData";
 import heroSliderData from "../data/heroSliderData";
 import "swiper/swiper-bundle.css";
@@ -17,7 +22,7 @@ const Header = () => {
         <h1 className=" font-bold text-orange-700 dark:text-orange-600">
           <span className="text-xl md:text-7xl">NEURODIVERSE</span> <br />{" "}
           <span className="text-sm md:text-3xl text-orange-500 dark:text-orange-300">
-          Centre for Developmental and Behavioral Pediatrics
+            Centre for Developmental and Behavioral Pediatrics
           </span>
         </h1>
       </div>
@@ -41,19 +46,21 @@ const Header = () => {
           {heroSliderData.map((ad, index) => (
             <div key={index}>
               <SwiperSlide>
-                <div className="aspect-w-16 aspect-h-10 relative">
-                  <img
-                    className="w-full object-cover rounded-xl max-h-[35rem]"
-                    src={ad.image}
-                    alt="advertisements"
-                  />
-                  <div className="absolute inset-0 bg-black opacity-40 rounded-xl"></div>
-                  <div className="absolute bottom-10 left-20 lg:bottom-20 lg:left-36">
-                    <h2 className="text-white font-bold text-2xl lg:text-7xl w-40">
-                      {ad.name}
-                    </h2>
+                <Link to={"/services/" + ad.slug}>
+                  <div className="aspect-w-16 aspect-h-10 relative">
+                    <img
+                      className="w-full object-cover rounded-xl max-h-[35rem]"
+                      src={ad.image}
+                      alt="advertisements"
+                    />
+                    <div className="absolute inset-0 bg-black opacity-40 rounded-xl"></div>
+                    <div className="absolute bottom-10 left-20 lg:bottom-20 lg:left-36">
+                      <h2 className="text-white font-bold text-2xl lg:text-7xl w-40">
+                        {ad.name}
+                      </h2>
+                    </div>
                   </div>
-                </div>
+                </Link>
               </SwiperSlide>
             </div>
           ))}
@@ -250,10 +257,10 @@ const Team = () => {
             />
             <div className="mt-2 sm:mt-4">
               <h3 className="text-sm font-medium text-gray-800 sm:text-base lg:text-lg dark:text-gray-200">
-                Uzma Saimi
+                USMA SAIMI
               </h3>
               <p className="text-xs text-gray-600 sm:text-sm lg:text-base dark:text-gray-400">
-                Speech Therapist
+                SPEECH THERAPIST
               </p>
             </div>
           </div>
@@ -269,7 +276,7 @@ const Team = () => {
                 MANISHA GAURAV
               </h3>
               <p className="text-xs text-gray-600 sm:text-sm lg:text-base dark:text-gray-400">
-                Senior Speech and Language Pathologist
+                SENIOR SPEECH AND LANGUAGE PATHOLOGIST
               </p>
             </div>
           </div>
@@ -297,12 +304,59 @@ const Team = () => {
             />
             <div className="mt-2 sm:mt-4">
               <h3 className="text-sm font-medium text-gray-800 sm:text-base lg:text-lg dark:text-gray-200">
-                Nusrat Shabir Aga
+                NUSRAT SHABIR AGA
               </h3>
               <p className="text-xs text-gray-600 sm:text-sm lg:text-base dark:text-gray-400">
-                Special Educator
+                SPECIAL EDUCATOR
               </p>
             </div>
+          </div>
+          <div className="text-center">
+            <img
+              className="rounded-xl sm:w-48 sm:h-48 lg:w-60 lg:h-60 mx-auto object-cover"
+              src="/assets/drseeratBashir.jpeg"
+              alt="Image Description"
+            />
+            <div className="mt-2 sm:mt-4">
+              <h3 className="text-sm font-medium text-gray-800 sm:text-base lg:text-lg dark:text-gray-200">
+                DR SEERAT BASHAR
+              </h3>
+              <p className="text-xs text-gray-600 sm:text-sm lg:text-base dark:text-gray-400">
+                PHYSIOTHERAPIST
+              </p>
+            </div>
+          </div>
+          <div className="text-center">
+            <img
+              className="rounded-xl sm:w-48 sm:h-48 lg:w-60 lg:h-60 mx-auto object-cover"
+              src="/assets/shaziaSpeciaEducator.jpeg"
+              alt="Image Description"
+            />
+            <div className="mt-2 sm:mt-4">
+              <h3 className="text-sm font-medium text-gray-800 sm:text-base lg:text-lg dark:text-gray-200">
+                SYED SHAZIA
+              </h3>
+              <p className="text-xs text-gray-600 sm:text-sm lg:text-base dark:text-gray-400">
+              SPECIAL EDUCATOR
+              </p>
+            </div>
+           
+          </div>
+          <div className="text-center">
+            <img
+              className="rounded-xl sm:w-48 sm:h-48 lg:w-60 lg:h-60 mx-auto object-cover"
+              src="/assets/InshaAzizSpeechTherapist.jpeg"
+              alt="Image Description"
+            />
+           <div className="mt-2 sm:mt-4">
+<h3 className="text-sm font-medium text-gray-800 sm:text-base lg:text-lg dark:text-gray-200">
+  INSHA AZIZ
+</h3>
+<p className="text-xs text-gray-600 sm:text-sm lg:text-base dark:text-gray-400">
+SPECIAL EDUCATOR
+</p>
+</div>
+           
           </div>
         </div>
 
@@ -312,6 +366,7 @@ const Team = () => {
     </>
   );
 };
+
 
 const Features = () => {
   return (
