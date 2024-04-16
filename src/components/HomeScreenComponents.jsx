@@ -1,6 +1,6 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay, EffectCards } from "swiper/modules";
+import { Navigation, Pagination, Autoplay, EffectCoverflow } from "swiper/modules";
 import serviceData from "../data/serviceData";
 import heroSliderData from "../data/heroSliderData";
 import "swiper/swiper-bundle.css";
@@ -11,54 +11,57 @@ import { Link } from "react-router-dom";
 import testimonialData from "../data/testimonialData";
 
 const Header = () => {
-
   return (
     <div className="max-w-[85rem] w-full overflow-x-hidden overflow-y-hidden px-4 py-6 sm:px-6 mt-10 lg:py-14 mx-auto rounded">
       <div className="flex text-center items-center justify-center py-10">
-      <h1 className=" font-bold text-orange-700 dark:text-orange-600"><span className="text-xl md:text-7xl">Neurodiverse</span> <br /> <span className="text-sm md:text-3xl text-orange-500 dark:text-orange-300">Best Developmental & Pediatrics Care in Kashmir</span></h1>
+        <h1 className=" font-bold text-orange-700 dark:text-orange-600">
+          <span className="text-xl md:text-7xl">NEURODIVERSE</span> <br />{" "}
+          <span className="text-sm md:text-3xl text-orange-500 dark:text-orange-300">
+          Centre for Developmental and Behavioral Pediatrics
+          </span>
+        </h1>
       </div>
-    <Swiper
-      effect="cards"
-      modules={[Navigation, Pagination, Autoplay, EffectCards]}
-      spaceBetween={20}
-      slidesPerView={1}
-      autoplay={{ delay: 3000 }}
-      breakpoints={{
-        740: {
-          slidesPerView: 1,
-        },
-        1024: {
-          slidesPerView: 1,
-        },
-      }}
-    >
-      {/* Grid */}
-      <div>
-  {heroSliderData.map((ad, index) => (
-    <div key={index}>
-      <SwiperSlide>
-        <div className="aspect-w-16 aspect-h-10 relative">
-          <img
-            className="w-full object-cover rounded-xl max-h-[35rem]"
-            src={ad.image}
-            alt="advertisements"
-          />
-          <div className="absolute inset-0 bg-black opacity-40 rounded-xl"></div>
-          <div className="absolute bottom-10 left-20 lg:bottom-20 lg:left-36">
-          <h2 className="text-white font-bold text-2xl lg:text-7xl w-40">
-            {ad.name}
-          </h2>
-          </div>
+      <Swiper
+        effect="coverflow"
+        modules={[Navigation, Pagination, Autoplay, EffectCoverflow]}
+        spaceBetween={20}
+        slidesPerView={1}
+        autoplay={{ delay: 3000 }}
+        breakpoints={{
+          740: {
+            slidesPerView: 1,
+          },
+          1024: {
+            slidesPerView: 1,
+          },
+        }}
+      >
+        {/* Grid */}
+        <div>
+          {heroSliderData.map((ad, index) => (
+            <div key={index}>
+              <SwiperSlide>
+                <div className="aspect-w-16 aspect-h-10 relative">
+                  <img
+                    className="w-full object-cover rounded-xl max-h-[35rem]"
+                    src={ad.image}
+                    alt="advertisements"
+                  />
+                  <div className="absolute inset-0 bg-black opacity-40 rounded-xl"></div>
+                  <div className="absolute bottom-10 left-20 lg:bottom-20 lg:left-36">
+                    <h2 className="text-white font-bold text-2xl lg:text-7xl w-40">
+                      {ad.name}
+                    </h2>
+                  </div>
+                </div>
+              </SwiperSlide>
+            </div>
+          ))}
         </div>
-      </SwiperSlide>
+      </Swiper>
     </div>
-  ))}
-</div>
-
-    </Swiper>
-  </div>
-  )
-}
+  );
+};
 
 const Services = () => {
   return (
@@ -83,7 +86,7 @@ const Services = () => {
             <div key={service.id}>
               <Link
                 className="group flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md transition dark:bg-slate-900 dark:border-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                to={"services/"+service.slug}
+                to={"services/" + service.slug}
               >
                 <div className="aspect-w-16 aspect-h-9">
                   <img
@@ -127,7 +130,9 @@ const Score = () => {
             <p className="mt-2 sm:mt-3 text-center text-4xl sm:text-6xl font-bold text-[#E75F14]">
               20+
             </p>
-            <p className="mt-1  text-center text-gray-500">Inclusive Programs</p>
+            <p className="mt-1  text-center text-gray-500">
+              Inclusive Programs
+            </p>
           </div>
           {/* End Stats */}
           {/* Stats */}
@@ -219,7 +224,7 @@ const Team = () => {
               </p>
             </div>
           </div>
-          
+
           {/* End Col */}
           <div className="text-center">
             <img
@@ -229,10 +234,10 @@ const Team = () => {
             />
             <div className="mt-2 sm:mt-4">
               <h3 className="text-sm font-medium text-gray-800 sm:text-base lg:text-lg dark:text-gray-200">
-              MR MUZAMIL MAJID
+                MR MUZAMIL MAJID
               </h3>
               <p className="text-xs text-gray-600 sm:text-sm lg:text-base dark:text-gray-400">
-              Senior Paediatric Rehabilitation Therapist
+                Senior Paediatric Rehabilitation Therapist
               </p>
             </div>
           </div>
@@ -261,10 +266,10 @@ const Team = () => {
             />
             <div className="mt-2 sm:mt-4">
               <h3 className="text-sm font-medium text-gray-800 sm:text-base lg:text-lg dark:text-gray-200">
-              MANISHA GAURAV
+                MANISHA GAURAV
               </h3>
               <p className="text-xs text-gray-600 sm:text-sm lg:text-base dark:text-gray-400">
-              Senior Speech and Language Pathologist 
+                Senior Speech and Language Pathologist
               </p>
             </div>
           </div>
@@ -277,14 +282,14 @@ const Team = () => {
             />
             <div className="mt-2 sm:mt-4">
               <h3 className="text-sm font-medium text-gray-800 sm:text-base lg:text-lg dark:text-gray-200">
-              ISHRAT ASHRAF
+                ISHRAT ASHRAF
               </h3>
               <p className="text-xs text-gray-600 sm:text-sm lg:text-base dark:text-gray-400">
-              CLINICAL DIETICIAN
+                CLINICAL DIETICIAN
               </p>
             </div>
           </div>
-        <div className="text-center">
+          <div className="text-center">
             <img
               className="rounded-xl sm:w-48 sm:h-48 lg:w-60 lg:h-60 mx-auto object-cover"
               src="https://res.cloudinary.com/dxn2kt39b/image/upload/v1705598031/tlsukfvk9qoknfcxrvqn.jpg"
@@ -292,11 +297,10 @@ const Team = () => {
             />
             <div className="mt-2 sm:mt-4">
               <h3 className="text-sm font-medium text-gray-800 sm:text-base lg:text-lg dark:text-gray-200">
-              Nusrat Shabir Aga 
-
+                Nusrat Shabir Aga
               </h3>
               <p className="text-xs text-gray-600 sm:text-sm lg:text-base dark:text-gray-400">
-              Special Educator
+                Special Educator
               </p>
             </div>
           </div>
@@ -453,130 +457,128 @@ const Features = () => {
 const Testimonials = () => {
   return (
     <>
-  {/* Card Blog */}
-  <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
-  <div className="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
+      {/* Card Blog */}
+      <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+        <div className="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
           <h2 className="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">
             Testimonials
           </h2>
         </div>
-    {/* Grid */}
-    <div className="grid lg:grid-cols-2 gap-6">
-      {/* Card */}
-      {testimonialData.map((testimony, index)=> (
-        <div key={index}> 
-      <Link
-        className="group relative block rounded-xl dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-        to={"testimonial/"+testimony.slug}
-      >
-        <div className="flex-shrink-0 relative rounded-xl overflow-hidden w-full h-[350px] before:absolute before:inset-x-0 before:w-full before:h-full before:bg-gradient-to-t before:from-gray-900/[.7] before:z-[1]">
-          <img
-            className="w-full h-full absolute top-0 start-0 object-cover"
-            src={testimony.image}
-            alt="Image Description"
-          />
-        </div>
-        <div className="absolute top-0 inset-x-0 z-10">
-          <div className="p-4 flex flex-col h-full sm:p-6">
-            {/* Avatar */}
-            <div className="flex items-center">
-            
-              <div className="ms-2.5 sm:ms-4">
-                <h4 className="font-semibold text-white">{testimony.by}</h4>
-              </div>
+        {/* Grid */}
+        <div className="grid lg:grid-cols-2 gap-6">
+          {/* Card */}
+          {testimonialData.map((testimony, index) => (
+            <div key={index}>
+              <Link
+                className="group relative block rounded-xl dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                to={"testimonial/" + testimony.slug}
+              >
+                <div className="flex-shrink-0 relative rounded-xl overflow-hidden w-full h-[350px] before:absolute before:inset-x-0 before:w-full before:h-full before:bg-gradient-to-t before:from-gray-900/[.7] before:z-[1]">
+                  <img
+                    className="w-full h-full absolute top-0 start-0 object-cover"
+                    src={testimony.image}
+                    alt="Image Description"
+                  />
+                </div>
+                <div className="absolute top-0 inset-x-0 z-10">
+                  <div className="p-4 flex flex-col h-full sm:p-6">
+                    {/* Avatar */}
+                    <div className="flex items-center">
+                      <div className="ms-2.5 sm:ms-4">
+                        <h4 className="font-semibold text-white">
+                          {testimony.by}
+                        </h4>
+                      </div>
+                    </div>
+                    {/* End Avatar */}
+                  </div>
+                </div>
+                <div className="absolute bottom-0 inset-x-0 z-10">
+                  <div className="flex flex-col h-full p-4 sm:p-6">
+                    <h3 className="text-lg sm:text-3xl font-semibold text-white group-hover:text-white/[.8]">
+                      {testimony.title.slice(0, 80) + "..."}
+                    </h3>
+                    <p className="mt-2 text-white/[.8]">
+                      Click to read more...
+                    </p>
+                  </div>
+                </div>
+              </Link>
+              {/* End Card */}
             </div>
-            {/* End Avatar */}
-          </div>
+          ))}
         </div>
-        <div className="absolute bottom-0 inset-x-0 z-10">
-          <div className="flex flex-col h-full p-4 sm:p-6">
-            <h3 className="text-lg sm:text-3xl font-semibold text-white group-hover:text-white/[.8]">
-{testimony.title.slice(0, 80)+"..."}
-            </h3>
-            <p className="mt-2 text-white/[.8]">
-              Click to read more...
-            </p>
-          </div>
-        </div>
-      </Link>
-      {/* End Card */}
+        {/* End Grid */}
       </div>
-      ))}
-      
-    </div>
-    {/* End Grid */}
-  </div>
-  {/* End Card Blog */}
-</>
-
-  )
-}
+      {/* End Card Blog */}
+    </>
+  );
+};
 
 const Appoint = () => {
   return (
     <>
-  {/* Hero */}
-  <div className="relative overflow-hidden pb-20 before:absolute before:top-0 before:start-1/2 before:bg-[url('https://preline.co/assets/svg/examples/squared-bg-element.svg')] before:bg-no-repeat before:bg-top before:w-full before:h-full before:-z-[1] before:transform before:-translate-x-1/2 dark:before:bg-[url('https://preline.co/assets/svg/examples/squared-bg-element-dark.svg')]">
-    <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-10">
-      {/* Announcement Banner */}
-      <div className="flex justify-center">
-        <a
-          className="inline-flex items-center gap-x-2 bg-white border border-gray-200 text-xs text-gray-600 p-2 px-3 rounded-full transition hover:border-gray-300 dark:bg-gray-800 dark:border-gray-700 dark:hover:border-gray-600 dark:text-gray-400"
-          href="https://wa.me/9622727372"
-          target="blank"
-        >
-          Book Your Appointment Now
-          <span className="flex items-center gap-x-1">
-            <span className="border-s border-gray-200 text-orange-600 ps-2 dark:text-orange-500">
-              Appoint
-            </span>
-            <svg
-              className="flex-shrink-0 w-4 h-4 text-orange-600"
-              xmlns="http://www.w3.org/2000/svg"
-              width={24}
-              height={24}
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth={2}
-              strokeLinecap="round"
-              strokeLinejoin="round"
+      {/* Hero */}
+      <div className="relative overflow-hidden pb-20 before:absolute before:top-0 before:start-1/2 before:bg-[url('https://preline.co/assets/svg/examples/squared-bg-element.svg')] before:bg-no-repeat before:bg-top before:w-full before:h-full before:-z-[1] before:transform before:-translate-x-1/2 dark:before:bg-[url('https://preline.co/assets/svg/examples/squared-bg-element-dark.svg')]">
+        <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-10">
+          {/* Announcement Banner */}
+          <div className="flex justify-center">
+            <a
+              className="inline-flex items-center gap-x-2 bg-white border border-gray-200 text-xs text-gray-600 p-2 px-3 rounded-full transition hover:border-gray-300 dark:bg-gray-800 dark:border-gray-700 dark:hover:border-gray-600 dark:text-gray-400"
+              href="https://wa.me/9622727372"
+              target="blank"
             >
-              <path d="m9 18 6-6-6-6" />
-            </svg>
-          </span>
-        </a>
+              Book Your Appointment Now
+              <span className="flex items-center gap-x-1">
+                <span className="border-s border-gray-200 text-orange-600 ps-2 dark:text-orange-500">
+                  Appoint
+                </span>
+                <svg
+                  className="flex-shrink-0 w-4 h-4 text-orange-600"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width={24}
+                  height={24}
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="m9 18 6-6-6-6" />
+                </svg>
+              </span>
+            </a>
+          </div>
+          {/* End Announcement Banner */}
+          {/* Title */}
+          <div className="mt-5 max-w-2xl text-center mx-auto">
+            <h1 className="block font-bold text-gray-800 text-4xl md:text-5xl lg:text-6xl dark:text-gray-200">
+              Unlocking Potential Nurturing Future
+            </h1>
+          </div>
+          {/* End Title */}
+          <div className="mt-5 max-w-3xl text-center mx-auto">
+            <p className="text-lg text-gray-600 dark:text-gray-400">
+              Your Trusted Partner in Developmental and Behavioral Pediatrics
+            </p>
+          </div>
+          {/* Buttons */}
+          <div className="mt-8 gap-3 flex justify-center">
+            <a
+              className="inline-flex justify-center items-center gap-x-3 text-center bg-gradient-to-tl from-orange-600 to-violet-600 hover:from-violet-600 hover:to-orange-600 border border-transparent text-white text-sm font-medium rounded-full focus:outline-none focus:ring-2 focus:ring-orange-600 focus:ring-offset-2 focus:ring-offset-white py-3 px-4 dark:focus:ring-offset-gray-800"
+              href="https://wa.me/9622727372"
+              target="blank"
+            >
+              Book Appointment
+            </a>
+          </div>
+          {/* End Buttons */}
+        </div>
       </div>
-      {/* End Announcement Banner */}
-      {/* Title */}
-      <div className="mt-5 max-w-2xl text-center mx-auto">
-        <h1 className="block font-bold text-gray-800 text-4xl md:text-5xl lg:text-6xl dark:text-gray-200">
-        Unlocking Potential Nurturing Future
-        </h1>
-      </div>
-      {/* End Title */}
-      <div className="mt-5 max-w-3xl text-center mx-auto">
-        <p className="text-lg text-gray-600 dark:text-gray-400">
-        Your Trusted Partner in Developmental and Behavioral Pediatrics
-        </p>
-      </div>
-      {/* Buttons */}
-      <div className="mt-8 gap-3 flex justify-center">
-        <a
-          className="inline-flex justify-center items-center gap-x-3 text-center bg-gradient-to-tl from-orange-600 to-violet-600 hover:from-violet-600 hover:to-orange-600 border border-transparent text-white text-sm font-medium rounded-full focus:outline-none focus:ring-2 focus:ring-orange-600 focus:ring-offset-2 focus:ring-offset-white py-3 px-4 dark:focus:ring-offset-gray-800"
-          href="https://wa.me/9622727372"
-          target="blank"
-        >
-        
-          Book Appointment 
-        </a>
-      </div>
-      {/* End Buttons */}
-    </div>
-  </div>
-  {/* End Hero */}
-</>
-  )
-}
+      {/* End Hero */}
+    </>
+  );
+};
 
 export { Header, Services, Team, Features, Score, Testimonials, Appoint };
