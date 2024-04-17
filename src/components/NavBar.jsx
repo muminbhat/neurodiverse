@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Element } from "react-scroll"; // NavScroll Effect Hide and Show
 import { motion, AnimatePresence } from "framer-motion";
-import Minnavlogo from "../assets/Minnavlogo.png";
 import NavLinks from "./NavLinks";
 import DarkModeSwitcher from "./DarkModeSwitcher";
 
@@ -38,7 +37,7 @@ const Navbar = () => {
       >
         <div className="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-6">
           <Link to="/" className="flex items-center ">
-            <img src={Minnavlogo} className="h-[5vh] mr-3" alt="JKDAILY LOGO" />
+            <img src="https://www.neurodiverses.com/static/media/Minnavlogo.d980b2f73a44b4c44917.png" className="h-[5vh] mr-3" alt="NEURODIVERSE LOGO" />
           </Link>
           <div className="flex md:order-2">
             <>
