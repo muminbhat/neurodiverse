@@ -37,7 +37,7 @@ const Navbar = () => {
       >
         <div className="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-6">
           <Link to="/" className="flex items-center ">
-            <img src="https://www.neurodiverses.com/static/media/Minnavlogo.d980b2f73a44b4c44917.png" className="h-[5vh] mr-3" alt="NEURODIVERSE LOGO" />
+            <img src="/assets/Minnavlogo.png" className="h-[6vh] mr-3" alt="NEURODIVERSE LOGO" />
           </Link>
           <div className="flex md:order-2">
             <>
