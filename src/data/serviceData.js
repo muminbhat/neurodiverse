@@ -63,9 +63,9 @@ const serviceData = [
       },
       {
         id: 9,
-        name: "Dietics",
+        name: "Dietetics",
         image: "https://res.cloudinary.com/dxn2kt39b/image/upload/v1716857251/Career_after_Bsc_11_pu5k1w.jpg",
-        slug: "dietics",
+        slug: "Dietetics",
         content: "Our dietetics service provides personalized nutrition and dietary plans tailored to your individual health needs and goals. Our expert dietitians offer consultations, meal planning, and ongoing support to help you achieve optimal health and well-being."
       },
       
