@@ -192,7 +192,56 @@ const TeamScreen = () => {
                 </p>
               </div>
             </div>
+
+            <div className="text-center">
+              <img
+                className="rounded-xl sm:w-48 sm:h-48 lg:w-60 lg:h-60 mx-auto object-cover"
+                src="/assets/drseeratBashir.jpeg"
+                alt="Image Description"
+              />
+              <div className="mt-2 sm:mt-4">
+                <h3 className="text-sm font-medium text-gray-800 sm:text-base lg:text-lg dark:text-gray-200">
+                  DR SEERAT BAHAR
+                </h3>
+                <p className="text-xs text-gray-600 sm:text-sm lg:text-base dark:text-gray-400">
+                  PHYSIOTHERAPIST
+                </p>
+              </div>
+            </div>
+            <div className="text-center">
+              <img
+                className="rounded-xl sm:w-48 sm:h-48 lg:w-60 lg:h-60 mx-auto object-cover"
+                src="/assets/shaziaSpeciaEducator.jpeg"
+                alt="Image Description"
+              />
+              <div className="mt-2 sm:mt-4">
+                <h3 className="text-sm font-medium text-gray-800 sm:text-base lg:text-lg dark:text-gray-200">
+                  SYED SHAZIA
+                </h3>
+                <p className="text-xs text-gray-600 sm:text-sm lg:text-base dark:text-gray-400">
+                  SPECIAL EDUCATOR
+                </p>
+              </div>
+            </div>
+
+            <div className="text-center">
+            <img
+              className="rounded-xl sm:w-48 sm:h-48 lg:w-60 lg:h-60 mx-auto object-cover"
+              src="/assets/InshaAzizSpeechTherapist.jpeg"
+              alt="Image Description"
+            />
+           <div className="mt-2 sm:mt-4">
+<h3 className="text-sm font-medium text-gray-800 sm:text-base lg:text-lg dark:text-gray-200">
+  INSHA AZIZ
+</h3>
+<p className="text-xs text-gray-600 sm:text-sm lg:text-base dark:text-gray-400">
+SPEECH THERAPIST
+</p>
+</div>
+           
           </div>
+          </div>
+          
 
           {/* End Grid */}
         </div>

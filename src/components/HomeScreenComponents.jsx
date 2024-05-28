@@ -353,7 +353,7 @@ const Team = () => {
   INSHA AZIZ
 </h3>
 <p className="text-xs text-gray-600 sm:text-sm lg:text-base dark:text-gray-400">
-SPECIAL EDUCATOR
+SPEECH THERAPIST
 </p>
 </div>
            
