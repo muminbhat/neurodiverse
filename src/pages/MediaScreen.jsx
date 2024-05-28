@@ -1,4 +1,6 @@
 import React from 'react'
+import mediaData from '../data/mediaData'
+import serviceData from '../data/serviceData'
 
 const MediaScreen = () => {
   return (
@@ -63,7 +65,27 @@ const MediaScreen = () => {
       </div>
     </div>
     {/* End Hero */}
+
+    <div className="md:max-w-7xl md:mx-auto mb-10">
+  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+    {mediaData.map((media, index)=> (
+      <div key={index}>
+    <div className="space-y-2">
+      <img
+        className="w-full sm:size-80 object-cover"
+        src={media.image}
+        alt="Image Description"
+      />
+    </div>
+  
+    {/*  */}
+    </div>
+  ))}
+  </div>
+</div>
+
   </>
+
   )
 }
 

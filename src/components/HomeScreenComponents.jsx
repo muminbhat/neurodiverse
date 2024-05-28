@@ -257,7 +257,7 @@ const Team = () => {
             />
             <div className="mt-2 sm:mt-4">
               <h3 className="text-sm font-medium text-gray-800 sm:text-base lg:text-lg dark:text-gray-200">
-                USMA SAIMI
+                UZMA SAIMI
               </h3>
               <p className="text-xs text-gray-600 sm:text-sm lg:text-base dark:text-gray-400">
                 SPEECH THERAPIST
@@ -319,7 +319,7 @@ const Team = () => {
             />
             <div className="mt-2 sm:mt-4">
               <h3 className="text-sm font-medium text-gray-800 sm:text-base lg:text-lg dark:text-gray-200">
-                DR SEERAT BASHAR
+                DR SEERAT BAHAR
               </h3>
               <p className="text-xs text-gray-600 sm:text-sm lg:text-base dark:text-gray-400">
                 PHYSIOTHERAPIST

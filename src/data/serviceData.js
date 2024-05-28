@@ -61,6 +61,13 @@ const serviceData = [
         slug: "prosthetics-and-orthotics",
         content: "Prosthetics focuses on creating artificial limbs, aiding mobility after limb loss. Orthotics involves designing braces and devices to support and correct musculoskeletal issues. Both fields prioritize customization, technological advancements, and collaboration for tailored solutions, enhancing the mobility and well-being of individuals."
       },
+      {
+        id: 9,
+        name: "Dietics",
+        image: "https://res.cloudinary.com/dxn2kt39b/image/upload/v1716857251/Career_after_Bsc_11_pu5k1w.jpg",
+        slug: "dietics",
+        content: "Our dietetics service provides personalized nutrition and dietary plans tailored to your individual health needs and goals. Our expert dietitians offer consultations, meal planning, and ongoing support to help you achieve optimal health and well-being."
+      },
       
 ]
 
